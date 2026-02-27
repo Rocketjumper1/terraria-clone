@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dwaw0odpufy5"]
+
+[ext_resource type="Script" uid="uid://drmnxa7lhmmkd" path="res://Scripts/Node2d.cs" id="1_tx0tn"]
+[ext_resource type="PackedScene" uid="uid://bicv3un848vi1" path="res://Scenes/bullet.tscn" id="2_wjtap"]
+[ext_resource type="PackedScene" uid="uid://1rpa1xirsxny" path="res://Scenes/Player.tscn" id="3_v7gqg"]
+[ext_resource type="Texture2D" uid="uid://cyfmp6tidwq8i" path="res://Images/grass.png" id="4_chwn1"]
+[ext_resource type="Texture2D" uid="uid://dil3kgqpcwhb8" path="res://Images/rock.png" id="5_hvaui"]
+[ext_resource type="Script" uid="uid://bmvit5yugppmi" path="res://Scripts/TileMapLayer.cs" id="6_2ooml"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hol4"]
+texture = ExtResource("4_chwn1")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rj586"]
+texture = ExtResource("5_hvaui")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_q6r6c"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_0hol4")
+sources/1 = SubResource("TileSetAtlasSource_rj586")
+
+[node name="Main" type="Node2D" unique_id=1434436724]
+script = ExtResource("1_tx0tn")
+bulletRef = ExtResource("2_wjtap")
+
+[node name="Player" parent="." unique_id=518965794 instance=ExtResource("3_v7gqg")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1197872175]
+texture_filter = 1
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_q6r6c")
+script = ExtResource("6_2ooml")
+frequency = 0.0
+depth = 4000
+seed = 12201
