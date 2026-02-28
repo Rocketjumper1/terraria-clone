@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Gun" format=3 uid="uid://br7r6uc45hh8i"]
+
+[ext_resource type="Script" uid="uid://b6fguh856185i" path="res://Scripts/Gun.cs" id="1_2ge2k"]
+[ext_resource type="Texture2D" uid="uid://c3iawwkyqvum6" path="res://Images/Minishark.webp" id="2_qeyo2"]
+
+[resource]
+script = ExtResource("1_2ge2k")
+name = "Minishark"
+texture = ExtResource("2_qeyo2")
+metadata/_custom_type_script = "uid://b6fguh856185i"

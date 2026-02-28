@@ -1,12 +1,15 @@
 using Godot;
 using System;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 
 public partial class CharacterBody2d : CharacterBody2D
 {	[Export] public int teleportX = 200;
 	[Export] public int teleportY = 200;
 	[Export] public float Speed = 300.0f;
 	[Export] public float JumpVelocity = -400.0f;
-	[Export] public float MaxSpeed = 20000;
+	[Export] public float MaxSpeed = 2000;
+	
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -33,7 +36,7 @@ public partial class CharacterBody2d : CharacterBody2D
 		{	
 			
 			velocity.X += direction.X * Speed;
-			GD.Print(velocity, delta, direction);
+			
 			if(velocity.X > MaxSpeed)
 			{
 				velocity.X = MaxSpeed;

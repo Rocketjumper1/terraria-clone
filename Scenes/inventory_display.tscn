@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bhqxfa6psjal7"]
+
+[ext_resource type="Script" uid="uid://c01dndrrpigly" path="res://Scripts/InventoryDisplay.cs" id="1_pt0nc"]
+[ext_resource type="Resource" uid="uid://br7r6uc45hh8i" path="res://Resources/minishark.tres" id="2_dwdut"]
+[ext_resource type="PackedScene" uid="uid://urjj7vpeumxs" path="res://Scenes/item_slot.tscn" id="2_jv2xk"]
+
+[node name="InventoryDisplay" type="CanvasLayer" unique_id=1858476115 node_paths=PackedStringArray("_grid")]
+script = ExtResource("1_pt0nc")
+invSlot = ExtResource("2_jv2xk")
+_grid = NodePath("PanelContainer/MarginContainer/GridContainer")
+minishark = ExtResource("2_dwdut")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1661013236]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 47.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=241678210]
+custom_minimum_size = Vector2(5, 5)
+layout_direction = 2
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer" unique_id=1868925408]
+layout_direction = 2
+layout_mode = 2
+columns = 10

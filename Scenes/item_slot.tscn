@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://urjj7vpeumxs"]
+
+[ext_resource type="Script" uid="uid://dxhpk1uitwo30" path="res://Scripts/ItemSlot.cs" id="1_n6cxc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0myub"]
+font_size = 8
+
+[node name="ItemSlot" type="PanelContainer" unique_id=465305509 node_paths=PackedStringArray("_rect", "_label")]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 64.0
+offset_bottom = 64.0
+script = ExtResource("1_n6cxc")
+_rect = NodePath("Texture")
+_label = NodePath("Label")
+
+[node name="Texture" type="TextureRect" parent="." unique_id=1369018108]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=2041928652]
+layout_mode = 2
+size_flags_vertical = 0
+label_settings = SubResource("LabelSettings_0myub")
+horizontal_alignment = 1
